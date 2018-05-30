@@ -63,21 +63,19 @@ public class Markov {
         }else{
      //       sc.useDelimiter("[ ]");
         }
-        Set<String> words = new HashSet<>();
         StringBuilder text = new StringBuilder();
         while(sc.hasNext()){
             String next = sc.next();
             if(!isNumber(next)) {
-                words.add(next);
+                wordlist.add(next);
                 text.append(" ");
                 text.append(next);
             }
         }
         input = text.toString().split(" ");
-        wordlist = words;
     }
     private void calculateWeights(){
-        countUpAdjacency(wordlist);
+        countUpAdjacency();
         for(String word : markovmap.keySet()){
             for(String adj : markovmap.get(word).keySet()){
                 double rowsum = markovmap.get(word).get("\u200B");
@@ -95,8 +93,8 @@ public class Markov {
         }
         return true;
     }
-    private void countUpAdjacency(Set<String> words){
-        for(String current : words){
+    private void countUpAdjacency(){
+        for(String current : wordlist){
             //for each unique word in the file, make a map of adjacent words
             Map<String, Double> adjacent = new TreeMap<>();
             double sum = 0;
