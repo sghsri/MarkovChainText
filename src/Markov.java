@@ -35,7 +35,8 @@ public class Markov {
             word = input[(int)(Math.random()*input.length)];
         }
         for(int i = 0; i<numsentences;){
-            sb.append(word+" ");
+            sb.append(word);
+            sb.append(" ");
             if(word.contains(".") && !word.contains("Mrs.") && !word.contains("Mr.")){
                 sb.append("\n");
                 i++;
@@ -71,8 +72,6 @@ public class Markov {
         Scanner sc = new Scanner(new File(filename));
         if(!punctuation){
             sc.useDelimiter("[ ,!?.\"-;\n]");
-        }else{
-     //       sc.useDelimiter("[ ]");
         }
         StringBuilder text = new StringBuilder();
         while(sc.hasNext()){
