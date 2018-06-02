@@ -4,24 +4,27 @@
 
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 
 import static java.lang.System.out;
 
 public class Markov {
-    private static String filename = "monkeypaw.txt";
+    private static String filename = "mobydick";
+    private static String filetype = ".txt";
     String[] input;
     Set<String> wordlist;
     Map<String, Map<String, Double>> markovmap;
     public static void main(String[] args) throws IOException{
         Markov m = new Markov();
-        m.loadfromFile(filename, true);
+        m.loadfromFile("input/"+filename+filetype, true);
         m.calculateWeights();
         m.generateOutput("",10);
     }
     public Markov(){
         markovmap = new TreeMap<>();
+        wordlist = new HashSet<>();
     }
 
 
@@ -40,7 +43,15 @@ public class Markov {
             word=predictNextWord(word);
         }
         String output = sb.toString();
-        out.println(output.substring(0,1).toUpperCase()+output.substring(1));
+        output = (output.substring(0,1).toUpperCase()+output.substring(1));
+        try {
+            FileWriter fout = new FileWriter("output/"+filename + "_generated" + filetype);
+            fout.write(output);
+            fout.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 
     private String predictNextWord(String s){
