@@ -1,0 +1,14 @@
+# MarkovChainText
+This is a small Java program that generates sentences from the input files using a Markov Chain. For example, the following was generated from 
+The Monkey Paw:
+
+> "Mate," replied the old woman, with excitement. 
+The sound of the wall. 
+The man at the door. 
+"Do you do you of her appealingly as patiently as his wife, soothingly; "perhaps you'll find it had one." 
+"Was not more truthful than the box of what people are you could escape from the first man distinctly. 
+A third and listened in an unnatural look at," said the bolt as she screamed. 
+"It's Herbert!" she rose from referring somewhat marred by the stairs." 
+His mother and then to the table, pursued by the next one." 
+"Was not that you keep it burn," said his son, and spilled in a torrent. 
+I got brighter, and happy. 
